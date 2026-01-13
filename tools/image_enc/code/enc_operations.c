@@ -171,7 +171,7 @@ void handle_data_enc_ecb(uint8_t *key, uint8_t *buf, size_t length)
 void handle_data_enc_ctr(uint8_t *key, uint8_t *nonce, uint8_t *buf, size_t length)
 {
     mbedtls_aes_context ctx;
-    uint32_t offset = 0;
+    size_t offset = 0;
     uint8_t stream_block[16];
     mbedtls_aes_init(&ctx);
     mbedtls_aes_setkey_enc(&ctx, key, 128);
